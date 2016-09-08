@@ -25,7 +25,8 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 # conecta no broker
-client.connect("192.168.99.100", 1883)
+#client.connect("192.168.99.100", 1883)
+client.connect("test.mosquitto.org", 8080)
 
 # permace em loop, recebendo mensagens
 client.loop_forever()

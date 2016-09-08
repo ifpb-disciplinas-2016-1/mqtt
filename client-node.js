@@ -1,3 +1,4 @@
+//http://mitsuruog.github.io/what-mqtt/
 var mqtt    = require('mqtt');
 var readline = require('readline');
 var client  = mqtt.connect('mqtt://test.mosquitto.org');
@@ -8,14 +9,21 @@ const rl = readline.createInterface({
 });
 
 client.on('connect', function () {
-  client.subscribe('mitsuruog');
+  client.subscribe('sensor/temperatura');
 });
 
 client.on('message', function (topic, message) {
   console.log(message.toString());
 });
 
-rl.on('line', (input) => {
-  client.publish('mitsuruog', input);
-  console.log(`Enviando: ${input}`);
-});
+var iv = setInterval( function() {
+  var randInt = Math.floor(Math.random()*100);
+  client.publish('sensor/temperatura', ''+randInt);
+  console.log(randInt);
+}, 2500 );
+
+
+//rl.on('line', (input) => {
+//  client.publish('sensor/temperatura', input);
+//  console.log(`Enviando: ${input}`);
+//});

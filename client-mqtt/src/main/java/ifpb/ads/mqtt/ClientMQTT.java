@@ -20,8 +20,8 @@ public class ClientMQTT {
         String tmpDir = System.getProperty("java.io.tmpdir");
         MqttDefaultFilePersistence dataStore = new MqttDefaultFilePersistence(tmpDir);
 //        String topic = "area/10/sensor/5000/#";
-//        String topic = "sensor/temperatura/#";
-        String topic = "mitsuruog";
+        String topic = "sensor/temperatura/#";
+//        String topic = "mitsuruog";
         int qos = 2;
         String broker = "ws://test.mosquitto.org:8080/mqtt";
 //        String broker = "tcp://192.168.99.100:1883";

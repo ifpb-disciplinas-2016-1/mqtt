@@ -38,7 +38,6 @@ graph.render();
 
 var i = 0;
 var iv = setInterval( function() {
-
 	var data = { one: Math.floor(Math.random() * 40) + 120 };
 
 	var randInt = Math.floor(Math.random()*100);
@@ -48,7 +47,7 @@ var iv = setInterval( function() {
 	graph.series.addData(data);
 	graph.render();
 
-}, tv );
+}, 250 );
 
 </script>
 
